@@ -1,0 +1,39 @@
+.todo {
+    width: 30em;
+    height: 10%;
+    margin: auto;
+    padding: 10px 20px 20px;
+
+    border-radius: 20px;
+    color: #000000;
+    background: #edd6ff;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    border-bottom: 2px solid #000;
+}
+
+.name {
+    width: max-content;
+    margin: 0;
+}
+
+.status {
+    justify-self: flex-end;
+
+    width: max-content;
+}
+.status > * {
+    margin: 5px;
+}
+.status > .incomplete {
+    color: #a80000;
+}
+.status > .complete {
+    color: #00b45a;
+}

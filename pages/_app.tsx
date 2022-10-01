@@ -1,8 +1,20 @@
 import '../styles/globals.css'
+
+import axios from 'axios'
 import type { AppProps } from 'next/app'
+import { SWRConfig } from 'swr'
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+    const request = async (url: any, init: any) => {
+        const response = await axios(url, init)
+        return response.data
+    }
+
+    return (
+        <SWRConfig value={{ fetcher: request }}>
+            <Component {...pageProps} />
+        </SWRConfig>
+    )
 }
 
 export default MyApp
