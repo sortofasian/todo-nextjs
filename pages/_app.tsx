@@ -1,4 +1,5 @@
-import '../styles/globals.css'
+import './styles/_globals.css'
+import './styles/_classes.css'
 
 import axios from 'axios'
 import type { AppProps } from 'next/app'
@@ -11,7 +12,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     }
 
     return (
-        <SWRConfig value={{ fetcher: request }}>
+        <SWRConfig value={{ fetcher: request, refreshInterval: 0 }}>
             <Component {...pageProps} />
         </SWRConfig>
     )

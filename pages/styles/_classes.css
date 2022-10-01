@@ -1,0 +1,36 @@
+.container {
+    width: 30em;
+    height: 10%;
+    margin: 10px auto;
+    padding: 10px 20px 20px;
+
+    border-radius: 20px;
+    color: #000000;
+    background: #edd6ff;
+}
+
+button {
+    display: inline;
+
+    height: 2.5em;
+    width: 10em;
+    margin: 10px auto 0;
+
+    border: none;
+    outline: 2px solid #c982ff4f;
+    border-radius: 20px;
+    color: #000;
+    background-color: #a0ffe7;
+    box-shadow: 3px 3px #bebebe;
+
+    transition: box-shadow 100ms linear, outline 100ms linear;
+}
+button:hover {
+    box-shadow: 4px 4px #bebebeb6;
+}
+button:active {
+    box-shadow: 2px 2px #bebebe;
+}
+button:focus {
+    outline: 2px solid #c982ff;
+}

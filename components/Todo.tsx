@@ -1,24 +1,51 @@
 import { faCheck, faXmark } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import axios from 'axios'
+import { useSWRConfig } from 'swr'
 
+import { Todo } from '../types/api'
 import styles from './Todo.module.css'
 
 type Props = {
-    name: string
-    complete: boolean
+    todo: Todo
 }
 
-const Todo = ({ name, complete }: Props) => {
+const Todo = ({ todo }: Props) => {
+    const url = `/api/todos/${todo.id}`
+
+    const { mutate } = useSWRConfig()
+    const handleStatus = async () => {
+        await axios(url, { method: 'PUT', data: { complete: !todo.complete } })
+        mutate('/api/todos')
+    }
+    const handleDelete = async () => {
+        await axios(url, { method: 'DELETE' })
+        mutate('/api/todos')
+    }
+
     return (
-        <div className={styles.todo}>
+        <div className={'container'}>
             <div className={styles.header + ' ' + styles.complete}>
-                <h1 className={styles.name}>{name}</h1>
+                <h1 className={styles.name}>{todo.name}</h1>
+
                 <div className={styles.status}>
                     <FontAwesomeIcon
-                        icon={complete ? faCheck : faXmark}
-                        className={complete ? styles.complete : styles.incomplete}
+                        icon={todo.complete ? faCheck : faXmark}
+                        className={todo.complete ? styles.complete : styles.incomplete}
                     />
                 </div>
+            </div>
+
+            <p className={styles.description}>{todo.description}</p>
+
+            <div className={styles.controls}>
+                <button onClick={handleStatus} className={styles.control_status}>
+                    {todo.complete ? 'Incomplete' : 'Complete'}
+                </button>
+
+                <button onClick={handleDelete} className={styles.control_delete}>
+                    Delete
+                </button>
             </div>
         </div>
     )

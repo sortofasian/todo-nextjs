@@ -1,21 +1,49 @@
+import axios from 'axios'
 import { NextPage } from 'next'
-import useSWR from 'swr'
+import { useState } from 'react'
+import useSWR, { useSWRConfig } from 'swr'
 
+import Form from '../components/Form'
+import Loading from '../components/Loading'
 import Todo from '../components/Todo'
-import { GetTodos } from '../types/api'
+import Types from '../types/api'
 
 const Home: NextPage = () => {
-    const data = useSWR<GetTodos>('/api/todos').data
+    const { mutate } = useSWRConfig()
+    const todos = useSWR<Types.Todo[]>('/api/todos').data
+    const [name, setName] = useState('')
+    const [desc, setDesc] = useState('')
+
+    const createTodo = async () => {
+        await axios('/api/todos', {
+            method: 'POST',
+            data: { name: name, description: desc }
+        })
+        mutate('/api/todos')
+    }
 
     return (
         <div>
-            {data ? (
-                data.todos.map(({ name, complete }, i) => {
-                    return <Todo name={name} complete={complete} key={i} />
+            {todos ? (
+                todos.map((todo) => {
+                    return <Todo todo={todo} key={todo.id} />
                 })
             ) : (
-                <h1>Loading...</h1>
+                <Loading />
             )}
+
+            <Form name={name} setName={setName} buttonName='Create' handleClick={createTodo}>
+                <textarea
+                    role='textbox'
+                    placeholder='Description'
+                    value={desc}
+                    onChange={(e) => {
+                        e.target.style.height = ''
+                        e.target.style.height = e.target.scrollHeight + 'px'
+                        setDesc(e.target.value)
+                    }}
+                />
+            </Form>
         </div>
     )
 }

@@ -1,6 +1,6 @@
-export type GetTodos = {
-    todos: {
-        name: string
-        complete: boolean
-    }[]
+export type Todo = {
+    id: string
+    name: string
+    description: string
+    complete: boolean
 }

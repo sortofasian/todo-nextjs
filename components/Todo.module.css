@@ -1,26 +1,15 @@
-.todo {
-    width: 30em;
-    height: 10%;
-    margin: auto;
-    padding: 10px 20px 20px;
-
-    border-radius: 20px;
-    color: #000000;
-    background: #edd6ff;
-}
-
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     width: 100%;
+
     border-bottom: 2px solid #000;
 }
 
 .name {
     width: max-content;
-    margin: 0;
 }
 
 .status {
@@ -36,4 +25,22 @@
 }
 .status > .complete {
     color: #00b45a;
+}
+
+.description {
+    width: 100%;
+    word-wrap: break-word;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+}
+.controls > button {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.control_delete {
+    background-color: #ff9e9e;
 }
