@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     }
 
     return (
-        <SWRConfig value={{ fetcher: request, refreshInterval: 0 }}>
+        <SWRConfig value={{ fetcher: request, refreshInterval: 1000 }}>
             <Component {...pageProps} />
         </SWRConfig>
     )
