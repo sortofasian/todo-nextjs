@@ -8,9 +8,9 @@ interface TodoRequest extends NextApiRequest {
     body: Partial<Todo> & Omit<Todo, 'complete' | 'id'>
 }
 
-export default async function handler(req: TodoRequest, res: NextApiResponse<Todo[]>) {
-    const prisma = new PrismaClient()
+const prisma = new PrismaClient()
 
+export default async function handler(req: TodoRequest, res: NextApiResponse<Todo[]>) {
     switch (req.method) {
         case 'GET': {
             const todos = await prisma.todo.findMany()

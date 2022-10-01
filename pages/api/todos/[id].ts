@@ -7,8 +7,9 @@ interface TodoRequest extends NextApiRequest {
     body: Partial<Omit<Todo, 'id'>>
 }
 
+const prisma = new PrismaClient()
+
 export default async function handler(req: TodoRequest, res: NextApiResponse) {
-    const prisma = new PrismaClient()
     const { id } = req.query
 
     if (!id || Array.isArray(id)) {
