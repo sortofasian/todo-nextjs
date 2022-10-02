@@ -1,3 +1,4 @@
+import 'normalize.css/normalize.css'
 import './styles/_globals.css'
 import './styles/_classes.css'
 
@@ -12,7 +13,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     }
 
     return (
-        <SWRConfig value={{ fetcher: request, refreshInterval: 1000 }}>
+        <SWRConfig value={{ fetcher: request, refreshInterval: 5000 }}>
             <Component {...pageProps} />
         </SWRConfig>
     )

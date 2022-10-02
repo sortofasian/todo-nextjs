@@ -7,6 +7,7 @@
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
+        "db": "prisma studio",
         "deploy": "vercel --prod"
     },
     "dependencies": {
@@ -18,6 +19,7 @@
         "axios": "^0.27.2",
         "nanoid": "^4.0.0",
         "next": "12.3.1",
+        "normalize.css": "^8.0.1",
         "react": "18.2.0",
         "react-dom": "18.2.0",
         "swr": "^1.3.0"
@@ -34,6 +36,9 @@
         "eslint-plugin-simple-import-sort": "^8.0.0",
         "prettier": "^2.7.1",
         "prisma": "^4.4.0",
+        "stylelint": "^14.13.0",
+        "stylelint-config-prettier": "^9.0.3",
+        "stylelint-config-standard": "^28.0.0",
         "typescript": "4.8.4",
         "vercel": "^28.4.5"
     }

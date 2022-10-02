@@ -1,7 +1,10 @@
 .loading {
+    /* Alignment */
     text-align: center;
 
+    /* Sizing */
     margin: 40px;
 
-    color: #fff;
+    /* Color */
+    color: rgb(255 255 255);
 }

@@ -11,7 +11,7 @@ datasource db {
 }
 
 model Todo {
-    id String @unique
+    id String @id @unique 
     name String
     description String
     complete Boolean @default(false)

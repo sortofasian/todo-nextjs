@@ -1,13 +1,16 @@
 .header {
     margin: 0 0 10px;
-    border-bottom: 2px solid #000;
+    border-bottom: 2px solid rgb(0 0 0);
 }
+
 .name {
+    /* Sizing */
     width: 100%;
     font-size: 2em;
     font-weight: bold;
 
-    color: #000;
+    /* Colors */
+    color: rgb(0 0 0);
     border: none;
     outline: none;
     background-color: transparent;

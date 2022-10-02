@@ -1,36 +1,45 @@
 .container {
+    /* Sizing */
     width: 30em;
     height: 10%;
     margin: 10px auto;
     padding: 10px 20px 20px;
 
+    /* Colors */
     border-radius: 20px;
-    color: #000000;
-    background: #edd6ff;
+    color: rgb(0 0 0);
+    background: rgb(237 214 255);
 }
 
 button {
+    /* Alignment */
     display: inline;
 
+    /* Sizing */
     height: 2.5em;
     width: 10em;
     margin: 10px auto 0;
 
+    /* Colors */
     border: none;
-    outline: 2px solid #c982ff4f;
+    outline: 2px solid rgb(201 130 255 / 31%);
     border-radius: 20px;
-    color: #000;
-    background-color: #a0ffe7;
-    box-shadow: 3px 3px #bebebe;
+    color: rgb(0 0 0);
+    background-color: rgb(160 255 231);
+    box-shadow: 3px 3px rgb(190 190 190);
 
+    /* Animation */
     transition: box-shadow 100ms linear, outline 100ms linear;
 }
+
 button:hover {
-    box-shadow: 4px 4px #bebebeb6;
+    box-shadow: 4px 4px rgb(190 190 190 / 71.4%);
 }
+
 button:active {
-    box-shadow: 2px 2px #bebebe;
+    box-shadow: 2px 2px rgb(190 190 190);
 }
+
 button:focus {
-    outline: 2px solid #c982ff;
+    outline: 2px solid rgb(201 130 255);
 }

@@ -3,7 +3,9 @@ CREATE TABLE "Todo" (
     "id" STRING NOT NULL,
     "name" STRING NOT NULL,
     "description" STRING NOT NULL,
-    "complete" BOOL NOT NULL DEFAULT false
+    "complete" BOOL NOT NULL DEFAULT false,
+
+    CONSTRAINT "Todo_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateIndex

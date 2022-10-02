@@ -26,7 +26,7 @@ const Todo = ({ todo }: Props) => {
     return (
         <div className={'container'}>
             <div className={styles.header + ' ' + styles.complete}>
-                <h1 className={styles.name}>{todo.name}</h1>
+                <p className={styles.name}>{todo.name}</p>
 
                 <div className={styles.status}>
                     <FontAwesomeIcon
@@ -40,7 +40,7 @@ const Todo = ({ todo }: Props) => {
 
             <div className={styles.controls}>
                 <button onClick={handleStatus} className={styles.control_status}>
-                    {todo.complete ? 'Incomplete' : 'Complete'}
+                    {todo.complete ? 'Mark Incomplete' : 'Mark Complete'}
                 </button>
 
                 <button onClick={handleDelete} className={styles.control_delete}>
